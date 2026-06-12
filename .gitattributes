@@ -1,0 +1,3 @@
+# sync.sh runs inside a Linux container — keep LF even when committed from
+# Windows, otherwise /bin/sh chokes on the \r characters.
+*.sh text eol=lf

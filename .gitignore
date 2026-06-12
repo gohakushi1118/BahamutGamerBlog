@@ -1,0 +1,7 @@
+.venv/
+venv/
+__pycache__/
+*.pyc
+# Scrape output (this tool is meant to write into a SEPARATE content repo)
+posts/
+scrape_state.json
