@@ -1,4 +1,4 @@
-# baha-home-sync
+# BahamutGamerBlog
 
 把巴哈姆特「創作大廳（小屋）」某位創作者的**公開**創作，自動抓取、轉成 Markdown，
 並（選用）由 Jenkins 定時同步到 GitHub。
