@@ -1,21 +1,3 @@
-// Jenkins Pipeline: Scrape Bahamut 小屋 creations → Markdown → commit & push.
-//
-// Everything (clone, scrape, commit, push) happens INSIDE a python:3.12-slim
-// Linux container via sync.sh. The container clones the repo fresh and pushes
-// directly, so nothing is written back to the Jenkins workspace.
-//
-// Why this design: on a Windows Jenkins host, a bind-mounted workspace is
-// effectively read-only to a Linux container (root can neither overwrite nor
-// delete host files). So the workspace is mounted read-only and used only to
-// read sync.sh; all work happens in the container's own filesystem.
-//
-// One-time setup (Jenkins UI):
-//   1. Plugins: Pipeline, Git. Docker installed & running on the Jenkins host.
-//   2. Credentials → "Username with password":
-//        ID: github-pat | Username: <your-github-username> | Password: <GitHub PAT, repo scope>
-//   3. New Item → Pipeline → "Pipeline script from SCM" → your fork, Script Path: Jenkinsfile.
-//   4. Run with "Build with Parameters" and set OWNER. Adjust the cron below as needed.
-
 pipeline {
     agent any
 

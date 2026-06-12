@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
 """
 baha-home-sync — Bahamut 小屋 creation scraper.
 

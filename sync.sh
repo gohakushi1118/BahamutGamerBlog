@@ -1,11 +1,3 @@
-#!/bin/sh
-# Runs INSIDE the Linux container (python:3.12-slim) from the Jenkins pipeline.
-# Clones the repo fresh, scrapes, commits and pushes — entirely within the
-# container's own filesystem, so nothing is written back to a bind mount
-# (a Windows Docker host makes the mounted workspace read-only to the container).
-#
-# Required env vars (passed via `docker run -e`):
-#   OWNER, BRANCH, GH_USER, GH_TOKEN, ORIGIN_URL
 set -e
 
 apt-get update -qq && apt-get install -y -qq git >/dev/null
